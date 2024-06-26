@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Movie-App/static/css/main.c44aefb3.css",
+    "main.js": "/Movie-App/static/js/main.524bb65a.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/Movie-App/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/search-bar-image.jpg": "/Movie-App/static/media/search-bar-image.f0baf607a66413a56f98.jpg",
+    "static/media/fontawesome-webfont.eot": "/Movie-App/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/Movie-App/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/Movie-App/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/Movie-App/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/Movie-App/index.html",
+    "main.c44aefb3.css.map": "/Movie-App/static/css/main.c44aefb3.css.map",
+    "main.524bb65a.js.map": "/Movie-App/static/js/main.524bb65a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c44aefb3.css",
+    "static/js/main.524bb65a.js"
+  ]
+}
