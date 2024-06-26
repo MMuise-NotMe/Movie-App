@@ -1,0 +1,68 @@
+// color variables
+@import "../../styles/filename.module.scss";
+$transition-timing: .2s;
+
+.movie {
+	margin: 1rem;
+	padding: 1.8rem 1rem 0.8rem 1rem;
+	border-radius: 25px;
+    border: 1px solid transparent;
+	width: 300px;
+	text-align: center;
+    transition: border $transition-timing ease-in-out;
+
+    img {
+        min-width: 185px;
+        min-height: 278px;
+        width: 185px;
+        height: 278px;
+        transform: translateY(0%);
+        text-align: center;
+    }
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.movie-title-rating {
+	position: relative;
+    transform: translateY(0);
+    transition: transform $transition-timing ease-in-out;
+}
+
+.rating {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 91%;
+	color: $white;
+    z-index: 1;
+	p {
+		margin: 0;
+		padding: 0.5rem 0.8rem;
+		border-radius: 25px;
+	}
+}
+
+.movie:hover {
+	border: 1px solid $border-grey;
+
+    .movie-title-rating {
+        transform: translateY(-1%);
+    }
+}
+
+.movie-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.movie-release {
+    font-weight: 400;
+    font-size: 1rem;
+}

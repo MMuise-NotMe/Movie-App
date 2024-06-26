@@ -1,0 +1,94 @@
+@import "../../styles/filename.module.scss";
+$animation-timing: 0.3s;
+$highlight-color: #007bff;
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $dark-grey;
+	padding: 0;
+	color: $white;
+
+	.navbar-title {
+		font-size: 1.5rem;
+		margin-left: 0.8rem;
+		a {
+			text-decoration: none;
+			color: $white;
+		}
+		.navbar-open {
+			opacity: 0;
+		}
+	}
+
+	.navbar-links {
+		list-style: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		.nav-link {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			color: $white;
+			font-size: 1.2rem;
+			padding: 1rem;
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0.4rem;
+				bottom: 0;
+				left: 50%;
+				background-color: $white;
+				transition: all $animation-timing ease-in-out;
+			}
+
+			&:hover::after {
+				width: 100%;
+				left: 0;
+			}
+
+			.link-element {
+				position: relative;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+// Responsive styles
+@media (max-width: 400px) {
+	.navbar {
+		display: block;
+		position: relative;
+		.navbar-title {
+			display: flex;
+			justify-content: space-between;
+			margin-left: 0;
+			padding: 1rem;
+			.navbar-open {
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+		.navbar-links {
+            display: block;
+			position: absolute;
+			background-color: inherit;
+			width: 100%;
+			z-index: 1000;
+            transform-origin: top;
+            transition: transform 0.2s ease-in-out;
+			&.open {
+                transform: scaleY(100%);
+			}
+			&.closed {
+				transform: scaleY(0%);
+			}
+		}
+	}
+}

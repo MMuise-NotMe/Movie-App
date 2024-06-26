@@ -1,0 +1,70 @@
+// color variables
+@import "../../styles/filename.module.scss";
+
+.home {
+	text-align: center;
+}
+.search-movies,
+.popular-movies {
+	opacity: 1;
+	margin: 2rem 0rem;
+	transform: scaleY(0%);
+	transform-origin: top;
+	animation: openDisplay 0.2s;
+	animation-fill-mode: forwards;
+}
+
+.search-movies-loading,
+.search-movies-none {
+	text-align: center;
+}
+
+.search-movies-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.more-page-btn {
+	padding: 0.6rem;
+	margin: auto 0;
+	cursor: pointer;
+	border-color: transparent;
+	background-color: $blue-1;
+	color: $white;
+	border-radius: 15px;
+	transition: background-color .2s ease-in-out;
+
+	&:hover {
+		background-color: #0056b3;
+	}
+}
+
+// below code from https://www.w3schools.com/howto/howto_css_loader.asp
+.loading-circle {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #3498db;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+// above code from https://www.w3schools.com/howto/howto_css_loader.asp
+
+@keyframes openDisplay {
+	0% {
+		transform: scaleY(0%);
+	}
+	100% {
+		transform: scaleY(100%);
+	}
+}

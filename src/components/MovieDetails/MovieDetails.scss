@@ -1,0 +1,158 @@
+@import "../../styles/filename.module.scss";
+
+$transition-timing: 0.3s;
+
+.movie-details {
+	text-align: center;
+	margin: 0;
+    padding: 8rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scaleY(0);
+	transform-origin: top;
+	animation: openDisplay 0.5s forwards;
+	color: $white;
+    height: 100%;
+}
+
+@keyframes openDisplay {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(1);
+	}
+}
+
+.movie-details-content {
+	width: 75%;
+	background-color: $translucent-black-1;
+	padding: 2rem;
+    margin: 2rem;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	box-shadow: 0 4px 15px $translucent-black-1;
+	backdrop-filter: blur(5px);
+
+	.poster {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+		img {
+			border-radius: 10px;
+			width: 342px;
+			height: auto;
+			box-shadow: 0 4px 15px $translucent-black-1;
+		}
+	}
+
+	.details {
+		text-align: left;
+
+		h2 {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: 2.5rem;
+			color: $yellow-1;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+		}
+
+		.metadata {
+			margin-bottom: 1rem;
+
+			p {
+				margin: 0.5rem 0;
+				font-size: 1.2rem;
+
+				strong {
+					color: $yellow-1;
+				}
+			}
+		}
+
+		.overview {
+			font-size: 1.1rem;
+			line-height: 1.6;
+			margin-top: 1rem;
+			color: $grey-1;
+		}
+	}
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+	.movie-details-content {
+		width: 80%;
+	}
+
+	.poster img {
+		width: 300px;
+	}
+}
+
+@media (max-width: 1100px) {
+    .movie-details {
+        padding: 0rem;
+    }
+	.movie-details-content {
+		width: 90%;
+		flex-direction: column;
+		align-items: center;
+
+		.details {
+			text-align: center;
+			h2 {
+				font-size: 2rem;
+			}
+			.metadata {
+				p {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+
+	.poster img {
+		width: 260px;
+	}
+}
+
+@media (max-width: 768px) {
+	.movie-details-content {
+		width: 95%;
+		margin: 1.5rem;
+		.details {
+			h2 {
+				font-size: 1.8rem;
+			}
+			.metadata {
+				p {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+
+	.poster img {
+		width: 260px;
+	}
+}
+
+@media (max-width: 576px) {
+    .movie-details {
+        align-items: flex-start;
+    }
+	.movie-details-content {
+        margin: 1rem;
+
+		.poster img {
+            width: 240px;
+		}
+	}
+}

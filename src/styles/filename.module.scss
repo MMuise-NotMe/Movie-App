@@ -1,0 +1,25 @@
+$black: #000;
+$white: #fff;
+$rating-green: #90ee90;
+$rating-grey: #808080;
+$border-grey: #ccc;
+$rating-good: #469448;
+$rating-okay: #c4b95c;
+$rating-bad: #ad4b44;
+$dark-grey: #333;
+$blue-1:#3498db;
+$blue-2:#236b9b;
+$translucent-black-1: #000000a8;
+$translucent-white-1:#ffffffb4;
+$yellow-1: #ffcc00;
+$grey-1:#e0e0e0;
+$transparent: transparent;
+
+:export {
+	blackColor: $black;
+	ratingGreen: $rating-green;
+	ratingGrey: $rating-grey;
+    ratingGood:$rating-good;
+    ratingOkay:$rating-okay;
+    ratingBad:$rating-bad;
+}

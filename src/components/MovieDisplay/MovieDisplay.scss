@@ -1,0 +1,44 @@
+@import "../../styles/filename.module.scss";
+$transition-timing: 0.3s;
+
+.movies {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	opacity: 1;
+	transition: opacity $transition-timing ease-in-out;
+}
+
+.movies.transition-phase {
+	opacity: 0;
+}
+
+.page-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.6rem;
+		margin: 0.2rem 0.8rem;
+		cursor: pointer;
+		border-color: transparent;
+		background-color: $blue-1;
+		color: $white;
+		border-radius: 15px;
+		transition: background-color $transition-timing ease-in-out;
+        &:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+		&:not(:disabled):hover {
+			background-color: $blue-2;
+		}
+	}
+	span {
+        width: 10rem;
+		text-align: center;
+	}
+}
