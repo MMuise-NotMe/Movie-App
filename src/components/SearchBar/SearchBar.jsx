@@ -1,5 +1,10 @@
 import React from "react";
 import "./SearchBar.scss";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faArrowRight);
 
 const SearchBar = ({handleSearch, searchQuery, setSearchQuery}) => {
 	return (
@@ -13,11 +18,16 @@ const SearchBar = ({handleSearch, searchQuery, setSearchQuery}) => {
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 							onSubmit={handleSearch}
-                            className={(searchQuery && ("has-words"))}
+							className={searchQuery && "has-words"}
 							placeholder="Search for movies"
 						/>
-						<button type="submit" className={"search-button " + (searchQuery && ("active"))}>
-							<i className="fa fa-arrow-right"></i>
+						<button
+							type="submit"
+							className={
+								"search-button " + (searchQuery && "active")
+							}
+						>
+							<FontAwesomeIcon icon="fa-solid fa-arrow-right" />
 						</button>
 						{searchQuery && (
 							<button type="submit" className="search-button">
