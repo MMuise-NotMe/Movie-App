@@ -16,10 +16,10 @@ function Navbar() {
                 <i className="fa fa-bars navbar-open" onClick={handleMenu}></i>
 			</div>
 			<div className={"navbar-links " + (isOpen ? "open" : "closed")}>
-				<Link to="/" className="nav-link">
+				<Link to="/" className="nav-link" onClick={handleMenu}>
 					<div className="link-element">Home</div>
 				</Link>
-                <Link to="/categories" className="nav-link">
+                <Link to="/categories" className="nav-link" onClick={handleMenu}>
 					<div className="link-element">Categories</div>
 				</Link>
 			</div>
