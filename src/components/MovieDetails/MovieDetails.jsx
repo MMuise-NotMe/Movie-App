@@ -26,7 +26,7 @@ function MovieDetails({movieDetails}) {
 	}, [id]);
 
 	if (!movie && !isError) {
-		return <div className="non-movie-details loading">Loading...</div>;
+		return <div className="non-movie-details loading"></div>;
 	}
     else if (isError) {
         return <div className="non-movie-details non-existent">Movie ID not recognised</div>
