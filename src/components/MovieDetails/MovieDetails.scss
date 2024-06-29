@@ -28,6 +28,32 @@ $transition-timing: 0.3s;
 	}
 }
 
+.non-movie-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0rem;
+    &.loading::after {
+        content:"Loading...";
+        animation: loadingText 1s infinite;
+    }
+}
+
+@keyframes loadingText {
+    0% {
+		content:"Loading"
+	}
+    33% {
+        content:"Loading."
+    }
+    66% {
+        content:"Loading.."
+    }
+	100% {
+		content:"Loading..."
+	}
+}
+
 .movie-details-content {
 	width: 75%;
 	background-color: $translucent-black-1;
