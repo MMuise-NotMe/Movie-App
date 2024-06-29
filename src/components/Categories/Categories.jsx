@@ -49,7 +49,6 @@ const Categories = () => {
 				console.error("Error getting movies:", error);
 			}
 		} else {
-			console.log("yay 0");
 			setSearchResults([]);
 		}
 	};
