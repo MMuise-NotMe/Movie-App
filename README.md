@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Please check the live demo [here](https://mmuise-notme.github.io/Movie-App/)
+
 ## Available Scripts
 
 In the project directory, you can run:
