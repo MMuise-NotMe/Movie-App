@@ -9,8 +9,8 @@
 }
 
 .display-area {
-    overflow:hidden;
-    position: relative;
+	overflow: hidden;
+	position: relative;
 	.movie-display-area {
 		width: 85%;
 		float: left;
@@ -28,7 +28,7 @@
 }
 
 .filter-button {
-    opacity: 0;
+	opacity: 0;
 	background-color: $blue-1;
 	color: $white;
 	border: none;
@@ -46,62 +46,78 @@
 
 // responsive stuffs
 @media only screen and (max-width: 1275px) {
-    .display-area {
-        .movie-display-area {
-            width: 80%;
-        }
-        .categories-panel {
-            width: 20%;
-        }
-    }
+	.display-area {
+		.movie-display-area {
+			width: 80%;
+		}
+		.categories-panel {
+			width: 20%;
+		}
+	}
 }
 
 @media only screen and (max-width: 860px) {
-    .display-area {
-        .movie-display-area {
-            width: 70%;
-        }
-        .categories-panel {
-            width: 30%;
-        }
-    }
+	.display-area {
+		.movie-display-area {
+			width: 70%;
+		}
+		.categories-panel {
+			width: 30%;
+		}
+	}
 }
 
 @media only screen and (max-width: 650px) {
-    .display-area {
-        overflow:visible;
-        .movie-display-area {
-            width: 100%;
-        }
-        .categories-panel {
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            background-color: $border-grey;
-            right: 0;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            box-shadow: 0 4px 8px $translucent-black-1;
-            transition: transform 0.2s ease-in-out;
-            width: 40%;
-            h3 {
-                margin: 0.5rem 0rem;
+	.display-area {
+		overflow: visible;
+		.movie-display-area {
+			width: 100%;
+		}
+		.categories-panel {
+			display: flex;
+			flex-direction: column;
+			padding: 1rem;
+			background-color: $border-grey;
+			right: 0;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+			box-shadow: 0 4px 8px $translucent-black-1;
+			transition: transform 0.2s ease-in-out;
+			width: 40%;
+			top: 10%;
+			overflow-y: auto;
+			max-height: 80vh;
+			h3 {
+				margin: 0.5rem 0rem;
+			}
+			&.open {
+				position: fixed;
+				transform: translateX(0);
+			}
+			&.closed {
+				position: fixed;
+				transform: translateX(120%);
+			}
+			.category-list {
+				font-size: 1rem;
+				font-weight: 400;
+			}
+		}
+	}
+	.filter-button {
+		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	.display-area {
+		.categories-panel {
+            width: 50%;
+            .button-container {
+                .filter-button {
+                    padding: 1rem;
+                }
             }
-            &.open {
-                position: fixed;
-                transform: translateX(0);
-            }
-            &.closed {
-                position: fixed;
-                transform: translateX(120%);
-            }
-            .category-list {
-                font-size: 1rem;
-                font-weight: 400;
-            }
-        }
-    }
-    .filter-button {
-        opacity: 1;
-    }
+		}
+	}
 }
