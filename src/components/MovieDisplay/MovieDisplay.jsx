@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import "./MovieDisplay.scss";
 import Movie from "../Movie/Movie";
+import gsap from "gsap"
 
 const MovieDisplay = ({moviesArray, maxMoviesPerPage}) => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -39,9 +40,15 @@ const MovieDisplay = ({moviesArray, maxMoviesPerPage}) => {
 	};
 
 	const scrollToTop = () => {
-		if (divRef.current) {
-			divRef.current.scrollTop = 0;
-		}
+		const elementTop = divRef.current.getBoundingClientRect().top;
+		const scrollTop = window.scrollY || window.pageYOffset;
+
+		const targetScroll = scrollTop + elementTop;
+
+		window.scrollTo({
+			top: targetScroll,
+			behavior: "instant",
+		});
 	};
 
 	return (
