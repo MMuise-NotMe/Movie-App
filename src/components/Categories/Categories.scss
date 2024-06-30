@@ -1,63 +1,40 @@
 // color variables
 @import "../../styles/filename.module.scss";
 
-.categories-container {
-	text-align: center;
-	padding: 2rem;
-	background-color: $border-grey;
-	box-shadow: 0 4px 8px $translucent-black-1;
-	border-radius: 10px;
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+}
 
-	.filter-button {
-		margin-bottom: 1rem;
+.display-area {
+    overflow:hidden;
+    position: relative;
+	.movie-display-area {
+		width: 85%;
+		float: left;
+		text-align: center;
 	}
-
 	.categories-panel {
-		margin-top: 1rem;
-		padding: 1rem;
-		background-color: $white;
-		border-radius: 10px;
-		overflow: hidden;
-
+		width: 15%;
+		float: left;
 		.category-list {
 			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
+			flex-direction: column;
 			gap: 0.5rem;
-
-			.category-label {
-				margin-bottom: 0.5rem;
-			}
 		}
-		&.open {
-			max-height: 100vh;
-		}
-
-		&.closed {
-			max-height: 0;
-		}
-	}
-
-	.movie-display-area {
-		margin-top: 2rem;
-		background-color: $white;
-		border-radius: 25px;
-		padding: 1.3rem 0rem;
-	}
-
-	.no-movies {
-		margin-top: 1rem;
 	}
 }
 
 .filter-button {
+    opacity: 0;
 	background-color: $blue-1;
 	color: $white;
 	border: none;
 	padding: 1rem 2rem;
 	font-size: 1rem;
-    font-weight: 500;
+	font-weight: 500;
 	border-radius: 4px;
 	cursor: pointer;
 	transition: background-color 0.3s ease-in-out;
@@ -65,4 +42,66 @@
 	&:hover {
 		background-color: $blue-2;
 	}
+}
+
+// responsive stuffs
+@media only screen and (max-width: 1275px) {
+    .display-area {
+        .movie-display-area {
+            width: 80%;
+        }
+        .categories-panel {
+            width: 20%;
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .display-area {
+        .movie-display-area {
+            width: 70%;
+        }
+        .categories-panel {
+            width: 30%;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .display-area {
+        overflow:visible;
+        .movie-display-area {
+            width: 100%;
+        }
+        .categories-panel {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background-color: $border-grey;
+            right: 0;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 0 4px 8px $translucent-black-1;
+            transition: transform 0.2s ease-in-out;
+            width: 40%;
+            h3 {
+                margin: 0.5rem 0rem;
+            }
+            &.open {
+                position: fixed;
+                transform: translateX(0);
+            }
+            &.closed {
+                position: fixed;
+                transform: translateX(120%);
+            }
+            .category-list {
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        }
+    }
+    .filter-button {
+        opacity: 1;
+    }
 }

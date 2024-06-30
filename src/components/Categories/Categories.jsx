@@ -71,45 +71,53 @@ const Categories = () => {
 		setSelectedCategories(updatedCategories);
 	};
 
-
 	return (
 		<div className="categories-container">
-			<button className="filter-button" onClick={togglePanel}>
-				Filter Movies
-			</button>
-			<div
-				className={
-					"categories-panel " +
-					(isPanelOpen == true ? "open" : "closed")
-				}
-			>
-				<h3>Search by Category</h3>
-				<div className="category-list">
-					{categories.map((category) => (
-						<label key={category.id} className="category-label">
-							<input
-								type="checkbox"
-								value={category.id}
-								onChange={() =>
-									handleCheckboxChange(category.id)
-								}
-							/>
-							{category.name}
-						</label>
-					))}
-				</div>
+			<div className="button-container">
+				<button className="filter-button" onClick={togglePanel}>
+					Filter Movies
+				</button>
 			</div>
-			<div className="movie-display-area">
-				{searchResults.length > 0 ? (
-					<div>
-						<MovieDisplay
-							moviesArray={searchResults}
-							maxMoviesPerPage={moviesPerPage}
-						/>
+			<div className="display-area">
+				<div className="movie-display-area">
+					{searchResults.length > 0 ? (
+						<div>
+							<MovieDisplay
+								moviesArray={searchResults}
+								maxMoviesPerPage={moviesPerPage}
+							/>
+						</div>
+					) : (
+						<div>No Movies</div>
+					)}
+				</div>
+				<div
+					className={
+						"categories-panel " +
+						(isPanelOpen == true ? "open" : "closed")
+					}
+				>
+					<h3>Search by Category</h3>
+					<div className="category-list">
+						{categories.map((category) => (
+							<label key={category.id} className="category-label">
+								<input
+									type="checkbox"
+									value={category.id}
+									onChange={() =>
+										handleCheckboxChange(category.id)
+									}
+								/>
+								{category.name}
+							</label>
+						))}
 					</div>
-				) : (
-					<div>No Movies</div>
-				)}
+					<div className="button-container">
+						<button className="filter-button" onClick={togglePanel}>
+							Close Filter
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
